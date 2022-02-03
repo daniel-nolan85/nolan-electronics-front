@@ -138,6 +138,12 @@ const StripeCheckout = ({ history }) => {
         />
       </div>
       <form id='payment-form' className='stripe-form' onSubmit={handleSubmit}>
+        <h5 className='text-danger'>
+          *Please use the following test credit card for payments*
+        </h5>
+        <h6 className='text-danger'>
+          4242 4242 4242 4242 - Exp: 01/25 - CVC: 123
+        </h6>
         <CardElement
           id='card-element'
           options={cartStyle}

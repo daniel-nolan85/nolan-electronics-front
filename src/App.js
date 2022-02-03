@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { auth } from './firebase';
 import { useDispatch } from 'react-redux';
 import { currentUser } from './functions/auth';
-import { LoadingOutlined } from '@ant-design/icons';
+import logo from './images/nolan-electronics.png';
 
 // import Header from './components/nav/Header';
 // import SideDrawer from './components/drawer/SideDrawer';
@@ -38,6 +38,7 @@ import { LoadingOutlined } from '@ant-design/icons';
 
 // using lazy
 const Header = lazy(() => import('./components/nav/Header'));
+const LoadupModal = lazy(() => import('./components/modal/LoadupModal'));
 const SideDrawer = lazy(() => import('./components/drawer/SideDrawer'));
 const Login = lazy(() => import('./pages/auth/Login'));
 const Register = lazy(() => import('./pages/auth/Register'));
@@ -104,14 +105,13 @@ const App = () => {
   return (
     <Suspense
       fallback={
-        <div className='col text-center p-5'>
-          __ React Redux EC
-          <LoadingOutlined />
-          MMERCE __
+        <div className='col text-center py-5 my-5'>
+          <img src={logo} className='logo-onload' />
         </div>
       }
     >
       <Header />
+      <LoadupModal />
       <SideDrawer />
       <ToastContainer />
       <Switch>

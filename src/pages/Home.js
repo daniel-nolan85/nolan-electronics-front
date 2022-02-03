@@ -1,6 +1,7 @@
 import React from 'react';
 import Jumbotron from '../components/cards/Jumbotron';
 import CategoryList from '../components/category/CategoryList';
+import Banner from '../components/home/Banner';
 import BestSellers from '../components/home/BestSellers';
 import NewArrivals from '../components/home/NewArrivals';
 import SubList from '../components/sub/SubList';
@@ -8,6 +9,7 @@ import SubList from '../components/sub/SubList';
 const Home = () => {
   return (
     <>
+      <Banner />
       <div className='jumbotron text-danger h1 font-weight-bold text-center'>
         <Jumbotron text={['Latest Products', 'New Arrivals', 'Best Sellers']} />
       </div>
